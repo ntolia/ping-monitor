@@ -11,7 +11,7 @@ services:
   grafana:
     build: grafana/
     ports:
-      - '3000:3000'
+      - '7700:3000'
     volumes:
       - grafana-storage:/var/lib/grafana
     depends_on:

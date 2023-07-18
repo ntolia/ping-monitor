@@ -125,7 +125,7 @@
           "measurement": "network_ping",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT COUNT(\"active\") FROM \"network_ping\" WHERE $timeFilter AND active < 1",
+          "query": "SELECT COUNT(\"active\") FROM \"network_ping\" WHERE $timeFilter",
           "rawQuery": true,
           "refId": "B",
           "resultFormat": "time_series",
@@ -143,14 +143,14 @@
         },
         {
           "datasource": "__expr__",
-          "expression": "$A/($A+$B)",
+          "expression": "$A/$B",
           "hide": false,
           "refId": "Online",
           "type": "math"
         },
         {
           "datasource": "__expr__",
-          "expression": "$B/($A+$B)",
+          "expression": "($B-$A)/$B",
           "hide": false,
           "refId": "Offline",
           "type": "math"
